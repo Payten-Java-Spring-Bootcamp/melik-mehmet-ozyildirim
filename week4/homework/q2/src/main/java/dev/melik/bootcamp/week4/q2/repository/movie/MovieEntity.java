@@ -22,6 +22,7 @@ public class MovieEntity {
 
     private String name;
 
+    @Enumerated(EnumType.STRING)
     private MovieGenre genre;
 
     private Integer releaseYear;
@@ -29,6 +30,11 @@ public class MovieEntity {
     private String director;
 
     @ManyToMany
+    @JoinTable(
+            name = "movie_actor",
+            joinColumns = @JoinColumn(name = "movie_id"),
+            inverseJoinColumns = @JoinColumn(name = "actor_id")
+    )
     private List<ActorEntity> cast = new java.util.ArrayList<>();
 
     @OneToMany(mappedBy = "movie",fetch = FetchType.EAGER)
