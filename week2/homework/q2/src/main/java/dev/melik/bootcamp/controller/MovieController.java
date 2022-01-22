@@ -1,6 +1,5 @@
 package dev.melik.bootcamp.controller;
 
-import dev.melik.bootcamp.model.Member;
 import dev.melik.bootcamp.model.Movie;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
